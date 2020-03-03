@@ -1,0 +1,10 @@
+{
+  "name": "Phantom Sitemap",
+  "description": "Automatically generates sitemap.xml files for your Phantom website",
+  "banner": "safe://sitemap.phantom/banner.png",
+  "scripts": {
+    "phantom": [
+      "safe://sitemap.phantom/plugin-phantom.js"
+    ]
+  }
+}
