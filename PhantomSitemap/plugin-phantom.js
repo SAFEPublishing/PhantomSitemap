@@ -1,10 +1,10 @@
-phantom.addObserver("pre_compile", async function(documentGroups, _) {
+phantom.addObserver("preCompile", async function(data) {
     let sitemapLinks = ["/"],
-        domain = phantom.getCurrentNRS(),
+        domain = await phantom.getNRS(),
         content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n";
 
-    documentGroups.forEach(documentGroup => {
-        documentGroup.forEach(document => {
+    data.documentGroups.forEach(documentGroup => {
+        documentGroup.documents.forEach(document => {
             sitemapLinks.push(document.path);
         });
     });
